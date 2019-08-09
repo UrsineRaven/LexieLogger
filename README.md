@@ -9,5 +9,5 @@ Steps to run this project:
 4. Setup database settings inside `ormconfig.json` file
 5. Run `npm start` command
 
-TODO: See what kind of credit I need to give Bootswatch for their Lumen theme
+TODO: See what kind of credit I need to give Bootswatch for their Lumen theme  
 TODO: Add screenshot(s) to this readme
