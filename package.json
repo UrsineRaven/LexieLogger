@@ -1,0 +1,19 @@
+{
+   "name": "LexieLog",
+   "version": "0.0.1",
+   "description": "Log Lexie's daily activities",
+   "devDependencies": {
+      "ts-node": "3.3.0",
+      "typescript": "3.3.3333"
+   },
+   "dependencies": {
+      "express": "^4.17.1",
+      "express-handlebars": "^3.1.0",
+      "q": "^1.5.1",
+      "sqlite3": "^4.0.9",
+      "typeorm": "^0.2.18"
+   },
+   "scripts": {
+      "start": "node src/index.hs"
+   }
+}

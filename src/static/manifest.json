@@ -1,0 +1,65 @@
+{
+    "name": "LexieLog",
+    "short_name": "LexieLog",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#158CBA",
+    "background_color": "#ffffff",
+    "icons": [
+        {
+    	    "src": "/LexieIcon_16.png",
+    	    "type": "image/png",
+    	    "sizes": "16x16"
+        },
+        {
+    	    "src": "/LexieIcon_32.png",
+    	    "type": "image/png",
+    	    "sizes": "32x32"
+        },
+        {
+    	    "src": "/LexieIcon_48.png",
+    	    "type": "image/png",
+    	    "sizes": "48x48"
+        },
+        {
+    	    "src": "/LexieIcon_64.png",
+    	    "type": "image/png",
+    	    "sizes": "64x64"
+        },
+        {
+    	    "src": "/LexieIcon_96.png",
+    	    "type": "image/png",
+    	    "sizes": "96x96"
+        },
+        {
+    	    "src": "/LexieIcon_128.png",
+    	    "type": "image/png",
+    	    "sizes": "128x128"
+        },
+        {
+    	    "src": "/LexieIcon_180.png",
+    	    "type": "image/png",
+    	    "sizes": "180x180"
+        },
+        {
+    	    "src": "/LexieIcon_192.png",
+    	    "type": "image/png",
+    	    "sizes": "192x192"
+        },
+        {
+    	    "src": "/LexieIcon_256.png",
+    	    "type": "image/png",
+    	    "sizes": "256x256"
+        },
+        {
+    	    "src": "/LexieIcon_512.png",
+    	    "type": "image/png",
+    	    "sizes": "512x512"
+        },
+        {
+    	    "src": "/LexieIcon_1024.png",
+    	    "type": "image/png",
+    	    "sizes": "1024x1024"
+        }
+    ]
+}

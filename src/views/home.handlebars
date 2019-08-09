@@ -1,0 +1,38 @@
+<!-- views/home.handlebars -->
+<h5 class="mt-3">Page last refreshed: <small class="text-muted"><script>document.write(new Date().toLocaleString())</script></small></h5>
+<div class="card border-primary mb-3">
+	<div class="card-header">New Events:</div>
+	<div class="card-body">
+		<form method="post">
+		<div class="form-group row">
+			<label for="inputTime" class="col-auto col-form-label">Time (if not now):</label>
+			<input type="time" class="form-control col" id="inputTime" name="Time">
+		</div>
+		<div class="row">
+		{{#each eventTypes}}
+			{{#if this.show}}
+			<button type="submit" class="btn btn-secondary col-lg-2 col-md-3 col-sm-4 col-6" title="New {{this.name}}" formaction="/new-event/{{this.id}}">{{this.name}}</button>
+			{{/if}}
+		{{/each}}
+		</div>
+	</div>
+</div>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Time</th>
+			<th scope="col">Event</th>
+			<th scope="col" class="text-danger">&#x2718;</th>
+		</tr>
+	</thead>
+	<tbody>
+            {{#each events}}
+	    <tr {{{this.type.formatting}}}>
+            	<td>{{this.time}}</td>
+            	<td>{{this.type.name}}</td>
+		<td class="col-1"><a href='/confirm/event/{{this.id}}'>&#x2718;</a></td>
+            </tr>
+            {{/each}}
+	</tbody>
+</table>
+<small><a href="/type-management">Manage Event Types...</a></small>

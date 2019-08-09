@@ -1,0 +1,71 @@
+<!-- views/type.handlebars -->
+    <form class="mt-5" action="/modify-type" method="post">
+    <fieldset>
+      <legend>Event Type Management</legend>
+      <div class="form-group">
+        <label for="inputChooseType">Event Type</label>
+	<select class="form-control" id="inputChooseType" name="EventType">
+          <option value="" selected>-- Create New --</option>
+	  {{#each eventTypes}}
+	  <option value="{{this.id}}">{{this.name}}</option>
+	  {{/each}}
+	</select>
+	<small id="chooseTypeHelp" class="form-text text-muted">Choose an event type if you want to modify an existing event.</small>
+      </div>
+      <div class="form-group">
+	<label for="inputTypeName">Event Type Name</label>
+	<input type="text" class="form-control" id="inputTypeName" name="Name" placeholder="Enter the event type name" required>
+      </div>
+      <div class="form-group">
+	<label for="inputTypeFormatting">Event Type Formating</label>
+	<input type="text" class="form-control" id="inputTypeFormatting" name="Formatting" placeholder="Enter the event type formatting">
+      </div>
+      <div class="form-group hidden" id="deleteGroup">
+        <label for="inputDelete" class="control-label text-danger">Remove Event Type</label>
+        <div class="">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" id="inputDelete" name="isDeleting"> Delete this event type!
+            </label>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </fieldset>
+    </form>
+    {{#endScripts}}
+    <!-- Misc scripts for functionality -->
+    <script type="text/javascript">
+      $(function(){ 
+	let map = { {{#each eventTypes}}{{this.id}}: {name: '{{this.name}}', formatting: '{{{this.formatting}}}'},{{/each}}'end':{} };
+        
+	// Toggle visibility of the Delete Event Type checkbox based on whether an existing event type is selected
+        $("#inputChooseType").on("change", function() {
+	  let id = $('#inputChooseType').val();
+          if (id) {
+            $('#deleteGroup').removeClass('hidden');
+	    $('#inputTypeName').val(map[id].name);
+	    $('#inputTypeFormatting').val(map[id].formatting);
+	  }
+	  else {
+            $('#deleteGroup').addClass('hidden');
+            $('#inputDelete').prop('checked', false);
+	    $('#inputTypeName').val('');
+	    $('#inputTypeFormatting').val('');
+	  }
+        });
+        $('#inputChooseType').change();
+	
+	$('#inputDelete').on('change', function() {
+	  if ($('#inputDelete').prop('checked')) {
+	    $('#inputTypeName').val(' ');
+	    $('#inputTypeFormatting').val(' ');
+	  } else {
+	    let id = $('#inputChooseType').val();
+	    $('#inputTypeName').val(map[id].name);
+	    $('#inputTypeFormatting').val(map[id].formatting);
+	  }
+	});
+      });
+    </script>
+    {{/endScripts}}

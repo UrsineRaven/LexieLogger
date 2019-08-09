@@ -1,0 +1,85 @@
+<!-- views/layouts/main.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{site.description}}">
+  <meta name="author" content="{{site.author}}">
+
+  <link rel="icon" type="image/png" href="/LexieIcon_16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/LexieIcon_32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/LexieIcon_48.png" sizes="48x48">
+  <link rel="icon" type="image/png" href="/LexieIcon_64.png" sizes="64x64">
+  <link rel="icon" type="image/png" href="/LexieIcon_96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/LexieIcon_128.png" sizes="128x128">
+  <link rel="icon" type="image/png" href="/LexieIcon_180.png" sizes="180x180">
+  <link rel="icon" type="image/png" href="/LexieIcon_192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/LexieIcon_256.png" sizes="256x256">
+  <link rel="icon" type="image/png" href="/LexieIcon_512.png" sizes="512x512">
+  <link rel="icon" type="image/png" href="/LexieIcon_1024.png" sizes="1024x1024">
+
+  <link rel="manifest" href="/manifest.json">
+  <title>{{site.name}}</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="/bootswatch-lumen_bootstrap.min.css">
+  <link rel="stylesheet" href="/customizations.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav class="navbar navbar-dark bg-primary" role="navigation">
+        <div class="navbar-header">
+	  <a class="navbar-brand" href="/">{{site.name}}</a>
+        </div>
+    </nav>
+
+
+    {{#if error}}
+    <p class="alert alert-warning">{{error}}</p>
+    {{/if}} {{#if success}}
+    <p class="alert alert-success">{{success}}</p>
+    {{/if}} {{#if notice}}
+    <p class="alert alert-info">{{notice}}</p>
+    {{/if}}
+
+    <!--where our other templates will insert-->
+    {{{body}}}
+
+
+  </div>
+  <!-- /container -->
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
+
+{{{_endScripts}}}
+</body>
+
+</html>
