@@ -10,3 +10,4 @@ Steps to run this project:
 5. Run `npm start` command
 
 TODO: See what kind of credit I need to give Bootswatch for their Lumen theme
+TODO: Add screenshot(s) to this readme
