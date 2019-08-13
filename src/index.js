@@ -167,7 +167,15 @@ app.post('/modify-type', function (req, res) {
 });
 
 //===============PORT=================
-var port = process.env.PORT || 3031;
+var port = process.env.PORT || config.Site.Port || 3030;
 //===============SSL=================
-require('http').createServer(app).listen(port);
+if (config.Site.Use_Https) {
+  var fs = require('fs'),
+    https = require('https'),
+    key = fs.readFileSync(__dirname + '/ssl/key.pem'),
+    cert= fs.readFileSync(__dirname + '/ssl/cert.pem');
+  https.createServer({ key: key, cert: cert }, app).listen(port);
+} else {
+  require('http').createServer(app).listen(port);
+}
 console.log('Listening on ' + port + '!');

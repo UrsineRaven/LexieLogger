@@ -3,6 +3,8 @@
         "Name":"LexieLog",
 	"Description":"View and log events in Lexie's day.",
 	"Author":"TODO",
-	"Url":"TODO"
+	"Url":"TODO",
+	"Port":3030,
+	"Use_Https":true
     }
 }
