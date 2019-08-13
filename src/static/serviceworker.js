@@ -1,5 +1,5 @@
 // Sources: https://developers.google.com/web/fundamentals/primers/service-workers/ 
-var CACHE_NAME = 'lexie-log-cache-v1';
+var CACHE_NAME = 'lexie-logger-cache-v1';
 var urlsToCache = [
   '/LexieIcon_1024.png',
   '/LexieIcon_512.png',

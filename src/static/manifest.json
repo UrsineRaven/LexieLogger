@@ -1,6 +1,6 @@
 {
-    "name": "LexieLog",
-    "short_name": "LexieLog",
+    "name": "LexieLogger",
+    "short_name": "LexieLogger",
     "start_url": "/",
     "display": "standalone",
     "theme_color": "#158CBA",
