@@ -20,4 +20,4 @@ I threw this together for my parents to keep track of their dog's activities (It
 
 ** Its ability to function as a Progressive Web App requires it to be hosted as HTTPS (which you can fairly easily achieve with LetsEncrypt); The HTTPS certificate provider, and the ability to run it from anywhere, depend on you using a dynamic DNS (if your router doesn't have a static IP from your ISP). Obviously, you can just use it as a web app, and run it from your local area network, and you don't have to worry about getting a certificate or using a dynamic DNS.  
 
-This is my first time using an ORM, and I didn't spend a ton of time on this app, so if I'm doing something inefficiently, please don't judge me. :)
+This is my first time using an ORM, and I didn't spend a ton of time on this app, so if I'm doing something inefficiently, please don't judge me, but do let me know. :)
