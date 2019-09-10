@@ -20,9 +20,9 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th scope="col">Time</th>
+			<th scope="col-auto">Time</th>
 			<th scope="col">Event</th>
-			<th scope="col" class="text-danger">&#x2718;</th>
+			<th scope="col-1" class="text-danger">&#x2718;</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -30,7 +30,7 @@
 	    <tr {{{this.type.formatting}}}>
             	<td>{{this.time}}</td>
             	<td>{{this.type.name}}</td>
-		<td class="col-1"><a href='/confirm/event/{{this.id}}'>&#x2718;</a></td>
+		<td><a href='/confirm/event/{{this.id}}'>&#x2718;</a></td>
             </tr>
             {{/each}}
 	</tbody>
