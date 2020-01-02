@@ -97,6 +97,7 @@ app.get('/', function (req, res) {
   helpers.getTodaysEvents().then(function(todaysEvents) {
     helpers.getEventTypes().then(function(visibleEventTypes) {
       res.render('home', { events: todaysEvents, eventTypes: visibleEventTypes });
+        console.log(new Date().toLocaleString(), " | ", req.ip, " => Home");
     });
   });
 });
@@ -108,6 +109,7 @@ app.post('/new-event/:event_id', function (req, res) {
   else
     time = helpers.getLocalIsoString(new Date()).split('T')[1].split('.')[0];
   helpers.logEvent(time, req.params.event_id);
+        console.log(new Date().toLocaleString(), " | ", req.ip, " => New Event");
   //res.locals.success = "Successfully added event!";
   res.redirect('/');
 });
@@ -116,6 +118,7 @@ app.get('/confirm/:type/:id', function (req, res) {
   let obj;
   if (req.params.type == 'event')
     helpers.getEvent(req.params.id).then(function(evt) {
+        console.log(new Date().toLocaleString(), " | ", req.ip, " => Confirm");
       res.render('confirm', { type: req.params.type, object: evt[0] });
     });
   else
@@ -126,11 +129,13 @@ app.get('/confirm/:type/:id', function (req, res) {
 
 app.get('/del-event/:event_id', function (req, res) {
   helpers.deleteEvent(req.params.event_id);
+        console.log(new Date().toLocaleString(), " | ", req.ip, " => DelEvent");
   res.redirect('/');
 });
 
 app.get('/type-management', function (req, res) {
   helpers.getEventTypes().then(function(visibleEventTypes) {
+        console.log(new Date().toLocaleString(), " | ", req.ip, " => TypeManagement");
     res.render('type', { eventTypes: visibleEventTypes });
   });
 });
@@ -163,6 +168,7 @@ app.post('/modify-type', function (req, res) {
     helpers.addEventType(eventType);
     res.locals.success = "Successfully added event: " + req.body.Name + "!";
   }
+        console.log(new Date().toLocaleString(), " | ", req.ip, " => ModifyEventType");
   res.redirect('/type-management');
 });
 

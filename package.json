@@ -12,8 +12,8 @@
       "fs": "0.0.1-security",
       "https": "^1.0.0",
       "q": "^1.5.1",
-      "sqlite3": "^4.0.9",
-      "typeorm": "^0.2.18"
+      "sqlite3": "^4.1.1",
+      "typeorm": "^0.2.22"
    },
    "scripts": {
       "start": "node src/index.hs"
