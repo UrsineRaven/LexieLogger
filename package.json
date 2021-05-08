@@ -13,7 +13,7 @@
       "https": "^1.0.0",
       "q": "^1.5.1",
       "sqlite3": "^4.1.1",
-      "typeorm": "^0.2.22"
+      "typeorm": "^0.2.25"
    },
    "scripts": {
       "start": "node src/index.hs"
